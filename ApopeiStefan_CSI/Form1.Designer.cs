@@ -31,9 +31,9 @@
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.Cript = new System.Windows.Forms.ToolStripMenuItem();
             this.CriptPlayfair = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDFGVXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Decript = new System.Windows.Forms.ToolStripMenuItem();
             this.DecriptPlayfair = new System.Windows.Forms.ToolStripMenuItem();
-            this.aDFGVXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,9 +60,16 @@
             // CriptPlayfair
             // 
             this.CriptPlayfair.Name = "CriptPlayfair";
-            this.CriptPlayfair.Size = new System.Drawing.Size(180, 22);
+            this.CriptPlayfair.Size = new System.Drawing.Size(118, 22);
             this.CriptPlayfair.Text = "Playfair";
             this.CriptPlayfair.Click += new System.EventHandler(this.OnCriptPlayfair);
+            // 
+            // aDFGVXToolStripMenuItem
+            // 
+            this.aDFGVXToolStripMenuItem.Name = "aDFGVXToolStripMenuItem";
+            this.aDFGVXToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.aDFGVXToolStripMenuItem.Text = "ADFGVX";
+            this.aDFGVXToolStripMenuItem.Click += new System.EventHandler(this.OnClickCriptareADFGVX);
             // 
             // Decript
             // 
@@ -75,15 +82,9 @@
             // DecriptPlayfair
             // 
             this.DecriptPlayfair.Name = "DecriptPlayfair";
-            this.DecriptPlayfair.Size = new System.Drawing.Size(113, 22);
+            this.DecriptPlayfair.Size = new System.Drawing.Size(180, 22);
             this.DecriptPlayfair.Text = "Playfair";
-            // 
-            // aDFGVXToolStripMenuItem
-            // 
-            this.aDFGVXToolStripMenuItem.Name = "aDFGVXToolStripMenuItem";
-            this.aDFGVXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aDFGVXToolStripMenuItem.Text = "ADFGVX";
-            this.aDFGVXToolStripMenuItem.Click += new System.EventHandler(this.OnClickCriptareADFGVX);
+            this.DecriptPlayfair.Click += new System.EventHandler(this.OnClickDecriptPlayfair);
             // 
             // MainForm
             // 

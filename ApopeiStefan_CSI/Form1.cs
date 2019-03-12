@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ApopeiStefan_CSI.Forms;
+using ApopeiStefan_CSI.Uc;
 
 namespace ApopeiStefan_CSI
 {
@@ -38,6 +39,19 @@ namespace ApopeiStefan_CSI
             {
                 Form CriptADFGVX = new CriptADFGVX();
                 CriptADFGVX.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void OnClickDecriptPlayfair(object sender, EventArgs e)
+        {
+            try
+            {
+                Form DecriptPlayfair = new DecriptPlayfair();
+                DecriptPlayfair.Show();
             }
             catch (Exception ex)
             {
