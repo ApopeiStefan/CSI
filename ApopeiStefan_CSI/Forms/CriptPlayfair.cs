@@ -97,7 +97,6 @@ namespace ApopeiStefan_CSI.Forms
             string[] inputString=new string[inputMessage.Length/2];
             string criptedMessage="";
             int contorTemporar = 0;
-
             for (int i = 0; i < inputMessage.Length; i += 2)
             {
                 inputString[contorTemporar] = inputMessage[i].ToString() + inputMessage[i+1].ToString();
@@ -130,25 +129,26 @@ namespace ApopeiStefan_CSI.Forms
                             if (cupluLitera1CoordY == cupluLitera2CoordY)
                             {
                                 if (cupluLitera2CoordX < 4 && cupluLitera1CoordX < 4) //sunt in mijloc
-                                {
                                     criptedMessage = criptedMessage + Matrice[++cupluLitera1CoordX, cupluLitera1CoordY].ToString() + Matrice[++cupluLitera2CoordX,cupluLitera2CoordY].ToString();
-                                    Console.WriteLine(Matrice[cupluLitera1CoordX++, cupluLitera1CoordY].ToString() + Matrice[cupluLitera2CoordX++, cupluLitera2CoordY].ToString());
-                                }
+                                else
                                 if (cupluLitera2CoordX== 4 && cupluLitera1CoordX < 4)
-                                    criptedMessage = criptedMessage + Matrice[cupluLitera1CoordX++, cupluLitera1CoordY].ToString() + Matrice[0, cupluLitera2CoordY].ToString();
+                                    criptedMessage = criptedMessage + Matrice[++cupluLitera1CoordX, cupluLitera1CoordY].ToString() + Matrice[0, cupluLitera2CoordY].ToString();
+                                else
                                 if (cupluLitera2CoordX < 4 && cupluLitera1CoordX == 4)
-                                    criptedMessage = criptedMessage + Matrice[0, cupluLitera1CoordY].ToString() + Matrice[cupluLitera2CoordX++, cupluLitera2CoordY].ToString();
+                                    criptedMessage = criptedMessage + Matrice[0, cupluLitera1CoordY].ToString() + Matrice[++cupluLitera2CoordX, cupluLitera2CoordY].ToString();
                             }
                             else
                             //literele sunt pe aceasi linie
                             if (cupluLitera1CoordX == cupluLitera2CoordX)
                             {
                                 if (cupluLitera2CoordY < 4 && cupluLitera1CoordY < 4)
-                                    criptedMessage = criptedMessage + Matrice[cupluLitera1CoordX, cupluLitera1CoordY++].ToString() + Matrice[cupluLitera2CoordX, cupluLitera2CoordY++].ToString();
+                                    criptedMessage = criptedMessage + Matrice[cupluLitera1CoordX, ++cupluLitera1CoordY].ToString() + Matrice[cupluLitera2CoordX, ++cupluLitera2CoordY].ToString();
+                                else
                                 if (cupluLitera2CoordY == 4 && cupluLitera1CoordY < 4)
-                                    criptedMessage = criptedMessage + Matrice[cupluLitera1CoordX, cupluLitera1CoordY++].ToString() + Matrice[cupluLitera2CoordX, 0].ToString();
+                                    criptedMessage = criptedMessage + Matrice[cupluLitera1CoordX, ++cupluLitera1CoordY].ToString() + Matrice[cupluLitera2CoordX, 0].ToString();
+                                else
                                 if (cupluLitera2CoordY < 4 && cupluLitera1CoordY == 4)
-                                    criptedMessage = criptedMessage + Matrice[cupluLitera1CoordX, 0].ToString() + Matrice[cupluLitera2CoordX, cupluLitera2CoordY++].ToString();
+                                    criptedMessage = criptedMessage + Matrice[cupluLitera1CoordX, 0].ToString() + Matrice[cupluLitera2CoordX,++cupluLitera2CoordY].ToString();
                             }
                             else
                             {
@@ -159,15 +159,6 @@ namespace ApopeiStefan_CSI.Forms
                         }
                     }
                 }
-            }
-            string test = "OW EH EG RY RY NQ BV VP EM GD MQ VB XI NR XG KI SM BE DN TF BL OF NQ EN DS LI EG OF CR QM PI XE QC FC RF SM KR GN IS GR GR GR GE OM RN SK GE MP IL FE GF TM CR EH SK AR EG RG MU CW IT XG RG GK PI LI SK GX EG RY IQ SF GN SR HK IU IF GN XG PQ PA XG MB NM LV ZS LM RY RN AC PA MD KD PQ DR RF MW DS GN CP XA SE EN DS IL FE EG ET NR YR LI PE RM FB MH NR";
-            if(criptedMessage.Equals(test.Replace(" ","")))
-            {
-                MessageBox.Show("Este ok");
-            }
-            else
-            {
-                MessageBox.Show("Nu este ok");
             }
             return criptedMessage;
         }
