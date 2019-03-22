@@ -34,7 +34,7 @@
             this.labelText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxText = new System.Windows.Forms.TextBox();
-            this.textBoxCheie1s = new System.Windows.Forms.TextBox();
+            this.textBoxCheie1 = new System.Windows.Forms.TextBox();
             this.textBoxCheie2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -93,12 +93,12 @@
             this.textBoxText.Size = new System.Drawing.Size(341, 282);
             this.textBoxText.TabIndex = 8;
             // 
-            // textBoxCheie1s
+            // textBoxCheie1
             // 
-            this.textBoxCheie1s.Location = new System.Drawing.Point(52, 30);
-            this.textBoxCheie1s.Name = "textBoxCheie1s";
-            this.textBoxCheie1s.Size = new System.Drawing.Size(341, 20);
-            this.textBoxCheie1s.TabIndex = 7;
+            this.textBoxCheie1.Location = new System.Drawing.Point(52, 30);
+            this.textBoxCheie1.Name = "textBoxCheie1";
+            this.textBoxCheie1.Size = new System.Drawing.Size(341, 20);
+            this.textBoxCheie1.TabIndex = 7;
             // 
             // textBoxCheie2
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.labelText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxText);
-            this.Controls.Add(this.textBoxCheie1s);
+            this.Controls.Add(this.textBoxCheie1);
             this.Name = "CriptADFGVX";
             this.Text = "CriptADFGVX";
             this.ResumeLayout(false);
@@ -145,7 +145,7 @@
         private System.Windows.Forms.Label labelText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxText;
-        private System.Windows.Forms.TextBox textBoxCheie1s;
+        private System.Windows.Forms.TextBox textBoxCheie1;
         private System.Windows.Forms.TextBox textBoxCheie2;
         private System.Windows.Forms.Label label2;
     }
