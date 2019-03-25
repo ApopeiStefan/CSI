@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ApopeiStefan_CSI.Forms
         private string CheiaUnu { get; set; }
         private string CheiaDoi { get; set; }
         private string MesajDeCriptat { get; set; }
+        private static Random random = new Random();
         public CriptADFGVX()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace ApopeiStefan_CSI.Forms
                 MesajDeCriptat = textBoxText.Text.Replace(" ","");
                 //create matrice 5x5
                 string[,] Matrice = new string[7, 7];
-                string[,] MatriceFinala = new string[CheiaDoi.Length, CheiaDoi.Length+1];
+                string[,] MatriceFinala = new string[CheiaDoi.Length, CheiaDoi.Length+2];
                 Matrice[0, 1] = "A";
                 Matrice[0, 2] = "D";
                 Matrice[0, 3] = "F";
@@ -53,10 +55,13 @@ namespace ApopeiStefan_CSI.Forms
                 Matrice[5, 0] = "V";
                 Matrice[6, 0] = "X";
                 Matrice = CreareMatrice1(Matrice, CheiaUnu);
-                MatriceFinala = CreareMatriceFinala(MatriceFinala,CheiaDoi, MesajDeCriptat);
-                for (int i = 0; i < 7; i++)
+                MatriceFinala = CreareMatriceFinala(Matrice, CheiaDoi, MesajDeCriptat);
+                int[] ordineCitireMatrice = new int[CheiaDoi.Length];
+                ordineCitireMatrice = OrdineCitiretext(MatriceFinala, CheiaDoi.Length);
+                textBoxTextCriptat.Text=CreareTextFinal(MatriceFinala, CheiaDoi.Length, ordineCitireMatrice);
+                for (int i = 0; i < CheiaDoi.Length; i++)
                 {
-                    for (int j = 0; j < 7; j++)
+                    for (int j = 0; j < CheiaDoi.Length+2; j++)
                     {
                         Console.Write(MatriceFinala[i, j] + " ");
                     }
@@ -129,19 +134,56 @@ namespace ApopeiStefan_CSI.Forms
         { 
             try
             {
-                string[] textCriptatVunu;
-                foreach(char litera in text)
+                string[,] MatriceFinala = new string[cheie.Length, cheie.Length + 2];
+                string textCriptatVunu="";
+                int contorTextCriptat = 0;
+                List<string> listaCheie = new List<string>();
+                foreach(var litera in text)
                 {
                     for (int i = 1; i < 7; i++)
                     {
                         for (int j = 1; j < 7; j++)
                         {
-
+                            if (litera.ToString().ToUpper().Contains(Matrice[i, j].ToString()))
+                            {
+                                textCriptatVunu = textCriptatVunu + Matrice[i, 0].ToString() + Matrice[0, j].ToString();
+                            }
+                            Console.WriteLine(Matrice[i, j].ToString()+" "+ litera.ToString());
                         }
                     }
                 }
-              
-               return Matrice;
+                for(int linie=0; linie<cheie.Length;linie++)
+                {
+                    MatriceFinala[linie, 0] = cheie[linie].ToString();
+                    listaCheie.Add(cheie[linie].ToString());
+                }
+                for (int coloana = 1; coloana < cheie.Length+1; coloana++)
+                {
+                    for (int linie = 0; linie < cheie.Length; linie++)
+                    {
+                        if (contorTextCriptat < textCriptatVunu.Length)
+                        {
+                            MatriceFinala[linie, coloana] = textCriptatVunu[contorTextCriptat].ToString();
+                            contorTextCriptat++;
+                        }
+                    }
+                }
+                //pune cifrele pe ultima coloana
+                listaCheie.Sort();
+                for (int linie = 0; linie < cheie.Length; linie++)
+                {
+                    MatriceFinala[linie, cheie.Length+1] = ((listaCheie.IndexOf(MatriceFinala[linie, 0].ToString()))+1).ToString();
+                }
+                //completez ce e null cu litere random
+                for (int coloana = 0; coloana < cheie.Length+1; coloana++)
+                {
+                    for (int linie = 0; linie < cheie.Length; linie++)
+                    {
+                        if(MatriceFinala[linie, coloana]==null)
+                        MatriceFinala[linie, coloana] = RandomString(1);
+                    }
+                }
+            return MatriceFinala;
             }
             catch(Exception e)
             {
@@ -150,5 +192,55 @@ namespace ApopeiStefan_CSI.Forms
             }
         }
 
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+        public static string CreareTextFinal(string[,] Matrice,int lungime,int[] ordineCitire)
+        {
+            try
+            {
+                string textCriptatFinal = "";
+                int linesToRead = 0;
+                while(linesToRead< lungime)
+                {
+                    for (int linie = 0; linie < lungime; linie++)
+                    {
+                        if (ordineCitire[linie] == linesToRead + 1)
+                            for (int coloana = 1; coloana < lungime + 1; coloana++)
+                            {
+                                textCriptatFinal = textCriptatFinal + Matrice[linie, coloana].ToString();
+                            }
+                    }
+                    linesToRead++;
+                } 
+              return textCriptatFinal;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Avertizare", MessageBoxButtons.OK);
+                return null;
+            }
+        }
+        public static int[] OrdineCitiretext(string[,] Matrice,int lungime)
+        {
+            try
+            {
+                int []textCriptatFinal =new int[lungime];
+                for (int linie = 0; linie < lungime; linie++)
+                {
+                    textCriptatFinal[linie] = Int32.Parse(Matrice[linie, lungime + 1]);
+                }
+
+                return textCriptatFinal;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Avertizare", MessageBoxButtons.OK);
+                return null;
+            }
+        }
     }
 }
