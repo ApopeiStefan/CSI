@@ -58,5 +58,18 @@ namespace ApopeiStefan_CSI
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void OnClickDecriptADFGVX(object sender, EventArgs e)
+        {
+            try
+            {
+                Form DecriptADFGVX = new DecriptADFGVX();
+                DecriptADFGVX.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

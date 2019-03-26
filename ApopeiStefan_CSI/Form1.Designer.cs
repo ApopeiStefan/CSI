@@ -34,6 +34,7 @@
             this.aDFGVXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Decript = new System.Windows.Forms.ToolStripMenuItem();
             this.DecriptPlayfair = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDFGVXToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +75,8 @@
             // Decript
             // 
             this.Decript.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DecriptPlayfair});
+            this.DecriptPlayfair,
+            this.aDFGVXToolStripMenuItem1});
             this.Decript.Name = "Decript";
             this.Decript.Size = new System.Drawing.Size(70, 20);
             this.Decript.Text = "Decriptari";
@@ -85,6 +87,13 @@
             this.DecriptPlayfair.Size = new System.Drawing.Size(180, 22);
             this.DecriptPlayfair.Text = "Playfair";
             this.DecriptPlayfair.Click += new System.EventHandler(this.OnClickDecriptPlayfair);
+            // 
+            // aDFGVXToolStripMenuItem1
+            // 
+            this.aDFGVXToolStripMenuItem1.Name = "aDFGVXToolStripMenuItem1";
+            this.aDFGVXToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.aDFGVXToolStripMenuItem1.Text = "ADFGVX";
+            this.aDFGVXToolStripMenuItem1.Click += new System.EventHandler(this.OnClickDecriptADFGVX);
             // 
             // MainForm
             // 
@@ -110,6 +119,7 @@
         private System.Windows.Forms.ToolStripMenuItem Decript;
         private System.Windows.Forms.ToolStripMenuItem DecriptPlayfair;
         private System.Windows.Forms.ToolStripMenuItem aDFGVXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aDFGVXToolStripMenuItem1;
     }
 }
 
