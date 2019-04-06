@@ -71,5 +71,31 @@ namespace ApopeiStefan_CSI
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void OnClickCriptHomofonic(object sender, EventArgs e)
+        {
+            try
+            {
+                Form CriptHomofonic = new CriptHomofonic();
+                CriptHomofonic.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void OnClickDecriptHomofonic(object sender, EventArgs e)
+        {
+            try
+            {
+                Form DecriptHomofonic = new DecriptHomofonic();
+                DecriptHomofonic.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

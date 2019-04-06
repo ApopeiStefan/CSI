@@ -32,9 +32,11 @@
             this.Cript = new System.Windows.Forms.ToolStripMenuItem();
             this.CriptPlayfair = new System.Windows.Forms.ToolStripMenuItem();
             this.aDFGVXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.homofonicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Decript = new System.Windows.Forms.ToolStripMenuItem();
             this.DecriptPlayfair = new System.Windows.Forms.ToolStripMenuItem();
             this.aDFGVXToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,8 @@
             // 
             this.Cript.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CriptPlayfair,
-            this.aDFGVXToolStripMenuItem});
+            this.aDFGVXToolStripMenuItem,
+            this.homofonicToolStripMenuItem});
             this.Cript.Name = "Cript";
             this.Cript.Size = new System.Drawing.Size(58, 20);
             this.Cript.Text = "Criptari";
@@ -61,22 +64,30 @@
             // CriptPlayfair
             // 
             this.CriptPlayfair.Name = "CriptPlayfair";
-            this.CriptPlayfair.Size = new System.Drawing.Size(118, 22);
+            this.CriptPlayfair.Size = new System.Drawing.Size(180, 22);
             this.CriptPlayfair.Text = "Playfair";
             this.CriptPlayfair.Click += new System.EventHandler(this.OnCriptPlayfair);
             // 
             // aDFGVXToolStripMenuItem
             // 
             this.aDFGVXToolStripMenuItem.Name = "aDFGVXToolStripMenuItem";
-            this.aDFGVXToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.aDFGVXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aDFGVXToolStripMenuItem.Text = "ADFGVX";
             this.aDFGVXToolStripMenuItem.Click += new System.EventHandler(this.OnClickCriptareADFGVX);
+            // 
+            // homofonicToolStripMenuItem
+            // 
+            this.homofonicToolStripMenuItem.Name = "homofonicToolStripMenuItem";
+            this.homofonicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homofonicToolStripMenuItem.Text = "Homofonic";
+            this.homofonicToolStripMenuItem.Click += new System.EventHandler(this.OnClickCriptHomofonic);
             // 
             // Decript
             // 
             this.Decript.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DecriptPlayfair,
-            this.aDFGVXToolStripMenuItem1});
+            this.aDFGVXToolStripMenuItem1,
+            this.toolStripMenuItem1});
             this.Decript.Name = "Decript";
             this.Decript.Size = new System.Drawing.Size(70, 20);
             this.Decript.Text = "Decriptari";
@@ -94,6 +105,13 @@
             this.aDFGVXToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.aDFGVXToolStripMenuItem1.Text = "ADFGVX";
             this.aDFGVXToolStripMenuItem1.Click += new System.EventHandler(this.OnClickDecriptADFGVX);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Homofonic";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.OnClickDecriptHomofonic);
             // 
             // MainForm
             // 
@@ -120,6 +138,8 @@
         private System.Windows.Forms.ToolStripMenuItem DecriptPlayfair;
         private System.Windows.Forms.ToolStripMenuItem aDFGVXToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aDFGVXToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem homofonicToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

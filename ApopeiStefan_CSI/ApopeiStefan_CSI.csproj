@@ -58,6 +58,12 @@
     <Compile Include="Forms\CriptADFGVX.Designer.cs">
       <DependentUpon>CriptADFGVX.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CriptHomofonic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CriptHomofonic.Designer.cs">
+      <DependentUpon>CriptHomofonic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CriptPlayfair.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="Forms\DecriptADFGVX.Designer.cs">
       <DependentUpon>DecriptADFGVX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DecriptHomofonic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DecriptHomofonic.Designer.cs">
+      <DependentUpon>DecriptHomofonic.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DecriptPlayfair.cs">
       <SubType>Form</SubType>
@@ -90,23 +102,30 @@
     <EmbeddedResource Include="Forms\CriptADFGVX.resx">
       <DependentUpon>CriptADFGVX.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CriptHomofonic.resx">
+      <DependentUpon>CriptHomofonic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriptPlayfair.resx">
       <DependentUpon>CriptPlayfair.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DecriptADFGVX.resx">
       <DependentUpon>DecriptADFGVX.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DecriptHomofonic.resx">
+      <DependentUpon>DecriptHomofonic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DecriptPlayfair.resx">
       <DependentUpon>DecriptPlayfair.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Uc\GenericUc.resx">
       <DependentUpon>GenericUc.cs</DependentUpon>
