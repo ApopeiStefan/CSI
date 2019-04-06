@@ -37,6 +37,7 @@
             this.DecriptPlayfair = new System.Windows.Forms.ToolStripMenuItem();
             this.aDFGVXToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.enigmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@
             this.Cript.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CriptPlayfair,
             this.aDFGVXToolStripMenuItem,
-            this.homofonicToolStripMenuItem});
+            this.homofonicToolStripMenuItem,
+            this.enigmaToolStripMenuItem});
             this.Cript.Name = "Cript";
             this.Cript.Size = new System.Drawing.Size(58, 20);
             this.Cript.Text = "Criptari";
@@ -113,6 +115,13 @@
             this.toolStripMenuItem1.Text = "Homofonic";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.OnClickDecriptHomofonic);
             // 
+            // enigmaToolStripMenuItem
+            // 
+            this.enigmaToolStripMenuItem.Name = "enigmaToolStripMenuItem";
+            this.enigmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.enigmaToolStripMenuItem.Text = "Enigma";
+            this.enigmaToolStripMenuItem.Click += new System.EventHandler(this.OnClickCriptEnigma);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +149,7 @@
         private System.Windows.Forms.ToolStripMenuItem aDFGVXToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem homofonicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem enigmaToolStripMenuItem;
     }
 }
 

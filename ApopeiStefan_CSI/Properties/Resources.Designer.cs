@@ -223,6 +223,114 @@ namespace ApopeiStefan_CSI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (AY)(BR)(CU)(DH)(EQ)(FS)(GL)(IP)(JX)(KN)(MO)(TZ)(VW).
+        /// </summary>
+        public static string ReflectorB {
+            get {
+                return ResourceManager.GetString("ReflectorB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (AF)(BV)(CP)(DJ)(EI)(GO)(HY)(KR)(LZ)(MX)(NW)(TQ)(SU).
+        /// </summary>
+        public static string ReflectorC {
+            get {
+                return ResourceManager.GetString("ReflectorC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EKMFLGDQVZNTOWYHXUSPAIBRCJ.
+        /// </summary>
+        public static string Rotor1 {
+            get {
+                return ResourceManager.GetString("Rotor1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NTZPSFBOKMWRCJDIVLAEYUXHGQ.
+        /// </summary>
+        public static string Rotor10 {
+            get {
+                return ResourceManager.GetString("Rotor10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AJDKSIRUXBLHWTMCQGZNPYFVOE.
+        /// </summary>
+        public static string Rotor2 {
+            get {
+                return ResourceManager.GetString("Rotor2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BDFHJLCPRTXVZNYEIWGAKMUSQO.
+        /// </summary>
+        public static string Rotor3 {
+            get {
+                return ResourceManager.GetString("Rotor3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ESOVPZJAYQUIRHXLNFTGKDCMWB.
+        /// </summary>
+        public static string Rotor4 {
+            get {
+                return ResourceManager.GetString("Rotor4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VZBRGITYUPSDNHLXAWMJQOFECK.
+        /// </summary>
+        public static string Rotor5 {
+            get {
+                return ResourceManager.GetString("Rotor5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JPGVOUMFYQBENHZRDKASXLICTW.
+        /// </summary>
+        public static string Rotor6 {
+            get {
+                return ResourceManager.GetString("Rotor6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NZJHGRCXMYSWBOUFAIVLPEKQDT.
+        /// </summary>
+        public static string Rotor7 {
+            get {
+                return ResourceManager.GetString("Rotor7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FKQHTLXOCBJSPDZRAMEWNIUYGV.
+        /// </summary>
+        public static string Rotor8 {
+            get {
+                return ResourceManager.GetString("Rotor8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JGDQOXUSCAMIFRVTPNEWKBLZYH.
+        /// </summary>
+        public static string Rotor9 {
+            get {
+                return ResourceManager.GetString("Rotor9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 14,16,30,31,43,58,73,79,84.
         /// </summary>
         public static string T {

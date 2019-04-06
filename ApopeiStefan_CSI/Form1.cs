@@ -97,5 +97,18 @@ namespace ApopeiStefan_CSI
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void OnClickCriptEnigma(object sender, EventArgs e)
+        {
+            try
+            {
+                Form CriptEnigma = new CriptEnigma();
+                CriptEnigma.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="Forms\CriptADFGVX.Designer.cs">
       <DependentUpon>CriptADFGVX.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CriptEnigma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CriptEnigma.Designer.cs">
+      <DependentUpon>CriptEnigma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CriptHomofonic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriptADFGVX.resx">
       <DependentUpon>CriptADFGVX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CriptEnigma.resx">
+      <DependentUpon>CriptEnigma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriptHomofonic.resx">
       <DependentUpon>CriptHomofonic.cs</DependentUpon>
