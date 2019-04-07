@@ -54,10 +54,12 @@ namespace ApopeiStefan_CSI.Forms
                 Matrice[6, 0] = "X";
                 Matrice = CreareMatrice1(Matrice, CheiaUnu);
                 MatriceFinala = CreareMatriceFinala(CheiaDoi, MesajDecriptat);
-
+                
                 int[] ordineCitireMatrice = new int[CheiaDoi.Length];
                 ordineCitireMatrice = OrdineCitiretext(MatriceFinala, CheiaDoi.Length);
-                textBoxTextDecriptat.Text = CreareTextFinal(MatriceFinala, CheiaDoi.Length, ordineCitireMatrice);
+                MatriceFinala = InvertMatrix(MatriceFinala);
+                MatriceFinala= OrderInvertMatrix(MatriceFinala, ordineCitireMatrice);
+                textBoxTextDecriptat.Text = CreareTextFinal(MatriceFinala, Matrice);
                 for (int i = 0; i < CheiaDoi.Length; i++)
                 {
                     for (int j = 0; j < CheiaDoi.Length + 2; j++)
@@ -171,25 +173,45 @@ namespace ApopeiStefan_CSI.Forms
                 return null;
             }
         }
-        public static string CreareTextFinal(string[,] Matrice, int lungime, int[] ordineCitire)
+        public static string CreareTextFinal(string[,] Matrice, string[,] MatriceUnu)
         {
             try
             {
-                string textCriptatFinal = "";
-                int linesToRead = 0;
-                while (linesToRead < lungime)
-                {
-                    for (int linie = 0; linie < lungime; linie++)
+                string mesajFina = "";
+                string[] mesajCriptat=new string[Matrice.GetLength(0)* (Matrice.GetLength(1)-2)];
+                int i = 0;
+                for (int coloana = 1; coloana < Matrice.GetLength(1) - 1; coloana++)
+                    for (int linie = 0; linie < Matrice.GetLength(0); linie++)
                     {
-                        if (ordineCitire[linie] == linesToRead + 1)
-                            for (int coloana = 1; coloana < lungime + 1; coloana++)
+                   
+                        mesajCriptat[i] = Matrice[linie, coloana];
+                    i++;
+                    }
+                int lungimeVector;
+                if (mesajCriptat.Length % 2 == 0)
+                    lungimeVector = mesajCriptat.Length;
+                else
+                    lungimeVector = mesajCriptat.Length - 1;
+                int indiceLinie=int.MaxValue, indiceColoana = int.MaxValue;
+                for (int element=0; element < lungimeVector; element= element+2)
+                {
+                    indiceLinie = int.MaxValue;
+                    indiceColoana = int.MaxValue;
+                    for (int coloana = 1; coloana < MatriceUnu.GetLength(1) ; coloana++)
+                    {
+                             int next = element + 1;
+                             if (mesajCriptat[element].Equals(MatriceUnu[coloana, 0]))
+                                indiceLinie = coloana;
+                             if (mesajCriptat[next].Equals(MatriceUnu[0, coloana]))
+                                 indiceColoana = coloana;
+                            if (indiceLinie != int.MaxValue && indiceColoana != int.MaxValue)
                             {
-                                textCriptatFinal = textCriptatFinal + Matrice[linie, coloana].ToString();
+                                mesajFina = mesajFina + MatriceUnu[indiceLinie, indiceColoana];
+                                coloana = int.MaxValue-1;
                             }
                     }
-                    linesToRead++;
                 }
-                return textCriptatFinal;
+               return mesajFina;
             }
             catch (Exception e)
             {
@@ -207,6 +229,50 @@ namespace ApopeiStefan_CSI.Forms
                     textCriptatFinal[linie] = Int32.Parse(Matrice[linie, lungime + 1]);
                 }
 
+                return textCriptatFinal;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Avertizare", MessageBoxButtons.OK);
+                return null;
+            }
+        }
+        public static string[,] InvertMatrix(string[,] matrix)
+        {
+            try
+            {
+                string[,] textCriptatFinal = new string[matrix.GetLength(0), matrix.GetLength(1)];
+                for (int linie = 0, coloanaM = 1; linie < matrix.GetLength(0) || coloanaM < matrix.GetLength(1)-1; linie++ , coloanaM++)
+                {
+                    for (int coloana = 1, linieM =0; coloana < matrix.GetLength(1) - 1 || linieM < matrix.GetLength(0); coloana++, linieM++)
+                    {
+                        int x = matrix.GetLength(1);
+                         textCriptatFinal[linie, coloana] = matrix[linieM,coloanaM];
+                    }    
+                }
+                return textCriptatFinal;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Avertizare", MessageBoxButtons.OK);
+                return null;
+            }
+        }
+        public static string[,] OrderInvertMatrix(string[,] matrix,int[] order)
+        {
+            try
+            {
+                string[,] textCriptatFinal = new string[matrix.GetLength(0), matrix.GetLength(1)];
+                int linie = 0;
+                foreach (int lin in order)
+                    {
+                        for (int coloana=1; coloana < matrix.GetLength(1)-1; coloana++)
+                        {
+                            textCriptatFinal[linie, coloana] = matrix[lin-1, coloana];
+                        }
+                    if (linie < matrix.GetLength(0))
+                        linie++;
+                }
                 return textCriptatFinal;
             }
             catch (Exception e)
