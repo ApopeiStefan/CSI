@@ -42,10 +42,10 @@ namespace ApopeiStefan_CSI.Forms
                 //create matrice 5x5
                 int numarColoane = 0;
                 string[,] Matrice = new string[7, 7];
-                if (MesajDeCriptat.Length % CheiaDoi.Length == 0)
-                    numarColoane = MesajDeCriptat.Length / CheiaDoi.Length;
+                if ((MesajDeCriptat.Length*2) % CheiaDoi.Length == 0)
+                    numarColoane = (MesajDeCriptat.Length*2) / CheiaDoi.Length;
                 else
-                    numarColoane = (MesajDeCriptat.Length / CheiaDoi.Length)+1;
+                    numarColoane = ((MesajDeCriptat.Length*2) / CheiaDoi.Length)+1;
                 string[,] MatriceFinala = new string[CheiaDoi.Length, numarColoane+2];
                 Matrice[0, 1] = "A";
                 Matrice[0, 2] = "D";
@@ -140,10 +140,10 @@ namespace ApopeiStefan_CSI.Forms
             try
             {
                 int numarColoane = 0;
-                if (text.Length % cheie.Length == 0)
-                    numarColoane = text.Length / cheie.Length;
+                if( (text.Length*2) % cheie.Length == 0)
+                    numarColoane = (text.Length * 2) / cheie.Length;
                 else
-                    numarColoane = (text.Length / cheie.Length) + 1;
+                    numarColoane = ((text.Length * 2) / cheie.Length) + 1;
                 string[,] MatriceFinala = new string[cheie.Length, numarColoane + 2];
                 string textCriptatVunu="";
                 int contorTextCriptat = 0;
@@ -167,27 +167,27 @@ namespace ApopeiStefan_CSI.Forms
                     MatriceFinala[linie, 0] = cheie[linie].ToString();
                     listaCheie.Add(cheie[linie].ToString());
                 }
-                for (int coloana = 1; coloana < cheie.Length+1; coloana++)
+                for (int coloana = 1; coloana < numarColoane + 2; coloana++)
                 {
                     for (int linie = 0; linie < cheie.Length; linie++)
                     {
                         if (contorTextCriptat < textCriptatVunu.Length)
                         {
-                            MatriceFinala[linie, coloana] = textCriptatVunu[contorTextCriptat].ToString();
+                            MatriceFinala[linie, coloana] = textCriptatVunu[contorTextCriptat].ToString();  
                             contorTextCriptat++;
                         }
                     }
                 }
                 //pune cifrele pe ultima coloana
                 listaCheie.Sort();
-                for (int linie = 0; linie < cheie.Length; linie++)
+                for (int linie = 0; linie < MatriceFinala.GetLength(0); linie++)
                 {
-                    MatriceFinala[linie, cheie.Length+1] = ((listaCheie.IndexOf(MatriceFinala[linie, 0].ToString()))+1).ToString();
+                    MatriceFinala[linie, numarColoane + 1] = ((listaCheie.IndexOf(MatriceFinala[linie, 0].ToString()))+1).ToString();
                 }
                 //completez ce e null cu litere random
-                for (int coloana = 0; coloana < cheie.Length+1; coloana++)
+                for (int coloana = 0; coloana < MatriceFinala.GetLength(1); coloana++)
                 {
-                    for (int linie = 0; linie < cheie.Length; linie++)
+                    for (int linie = 0; linie < MatriceFinala.GetLength(0); linie++)
                     {
                         if(MatriceFinala[linie, coloana]==null)
                         MatriceFinala[linie, coloana] = RandomString(1);
@@ -241,7 +241,7 @@ namespace ApopeiStefan_CSI.Forms
                 int []textCriptatFinal =new int[lungime];
                 for (int linie = 0; linie < lungime; linie++)
                 {
-                    textCriptatFinal[linie] = Int32.Parse(Matrice[linie, lungime + 1]);
+                    textCriptatFinal[linie] = Int32.Parse(Matrice[linie, Matrice.GetLength(1)-1]);
                 }
 
                 return textCriptatFinal;
