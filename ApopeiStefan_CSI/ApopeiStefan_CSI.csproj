@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CriptACAHomofonic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CriptACAHomofonic.Designer.cs">
+      <DependentUpon>CriptACAHomofonic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CriptADFGVX.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="Forms\CriptPlayfair.Designer.cs">
       <DependentUpon>CriptPlayfair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DecriptACAHomofonic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DecriptACAHomofonic.Designer.cs">
+      <DependentUpon>DecriptACAHomofonic.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DecriptADFGVX.cs">
       <SubType>Form</SubType>
@@ -105,6 +117,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CriptACAHomofonic.resx">
+      <DependentUpon>CriptACAHomofonic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriptADFGVX.resx">
       <DependentUpon>CriptADFGVX.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriptPlayfair.resx">
       <DependentUpon>CriptPlayfair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DecriptACAHomofonic.resx">
+      <DependentUpon>DecriptACAHomofonic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DecriptADFGVX.resx">
       <DependentUpon>DecriptADFGVX.cs</DependentUpon>
